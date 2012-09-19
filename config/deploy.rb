@@ -11,7 +11,7 @@ set :use_sudo, FALSE
 set :shared_children, %w{config content content}
 set :keep_releases, 3
 default_run_options[:pty] = true
-set :copy_exclude, %w(.git* /Capfile /config/*.rb)
+set :copy_exclude, %w(.git* /Capfile /config/*.rb /wp/wp-content)
 
 set :deploy_to, "/www/apache/html/#{application}"
 server "server.example.com", :web, :app
