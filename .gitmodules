@@ -1,3 +1,6 @@
 [submodule "wp"]
 	path = wp
 	url = git://github.com/WordPress/WordPress.git
+[submodule "content/themes/uwmadison"]
+	path = content/themes/uwmadison
+	url = git@bitbucket.org:uwmadison_ucomm/uwmadison_wordpress_theme.git
