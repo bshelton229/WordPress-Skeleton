@@ -4,6 +4,7 @@ set :repository,  "git://github.com/bshelton229/WordPress-Skeleton.git"
 
 # GIT
 set :scm, "git"
+set :git_enable_submodules, 1
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :user, "deploy"
