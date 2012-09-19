@@ -2,9 +2,9 @@
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( $local_config = dirname( __FILE__ ) . '/config/local-config.php' ) ) {
+if ( file_exists( dirname( __FILE__ ) . '/config/local-config.php' ) ) {
 	define( 'WP_LOCAL_DEV', true );
-	include( $local_config );
+	include( dirname( __FILE__ ) . '/config/local-config.php' );
 } else {
 	print 'provide config';
   exit;
@@ -13,12 +13,17 @@ if ( file_exists( $local_config = dirname( __FILE__ ) . '/config/local-config.ph
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+define('WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
+
+if ( !defined('WP_SUB_URI') )
+  define('WP_SUBURI', '/');
+
+define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . WP_SUBURI . 'content' );
 
 /** dynamically set siteurl and home options */
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp');
-define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . WP_SUBURI . 'wp');
+define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST'] . WP_SUBURI);
+
 
 // ================================================
 // You almost certainly do not want to change these
