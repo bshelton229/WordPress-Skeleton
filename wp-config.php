@@ -51,7 +51,10 @@ if ( !defined( 'AUTH_KEY' ) ) {
 // Table prefix
 // Change this if you have multiple installs in the same database
 // ==============================================================
-$table_prefix  = 'wp_';
+// Allow the possibility for this to be set in config/local-config.php
+if ( !isset($table_prefix) ) {
+  $table_prefix  = 'wp_';
+}
 
 // ================================
 // Language

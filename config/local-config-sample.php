@@ -12,8 +12,9 @@ You may include other settings here that you only want enabled on your local dev
 define( 'DB_NAME', 'local-db-name' );
 define( 'DB_USER', 'local-db-user' );
 define( 'DB_PASSWORD', 'local-db-password' );
-define( 'DB_HOST', 'localhost' ); // Probably 'localhost'
+define( 'DB_HOST', 'localhost' );
 
+// $table_prefix = 'wp_';
 
 // If the keys are defined here, they will not be loaded in wp-config.php
 
