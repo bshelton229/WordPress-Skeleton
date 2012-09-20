@@ -4,5 +4,5 @@
 /db-sync
 /content/upgrade/
 /content/uploads
-/config/local-config.php
+local-config.php
 .DS_Store
