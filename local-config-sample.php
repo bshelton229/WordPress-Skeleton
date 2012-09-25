@@ -14,6 +14,10 @@ define( 'DB_USER', 'local-db-user' );
 define( 'DB_PASSWORD', 'local-db-password' );
 define( 'DB_HOST', 'localhost' );
 
+// Comma separated list of hostnames which should be considered "local"
+// and re-written to $_SERVER['HTTP_HOST']. Also addresses wp-content => content replacement.
+// define( 'PATHFIX', 'site.local, mysite.local' );
+
 // $table_prefix = 'wp_';
 
 // If the keys are defined here, they will not be loaded in wp-config.php
