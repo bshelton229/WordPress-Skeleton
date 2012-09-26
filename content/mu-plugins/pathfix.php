@@ -41,7 +41,7 @@ class PathFix {
     if ( ! $hosts ) { return false; }
 
     // return preg_replace("#(" . implode('|', $hosts). ")#", $_SERVER['SERVER_NAME'], $content);
-    $pattern = "~(src|href)=(['\"])(https?://" . implode( '|', $hosts ) . "((?:(?!\\2).)*))\\2~xi";
+    $pattern = "~(src|href)=(['\"])(https?://(" . implode( '|', $hosts ) . ")((?:(?!\\2).)*))\\2~xi";
     $content = preg_replace_callback($pattern, array($this, 'replace'), $content);
     return $content;
   }
