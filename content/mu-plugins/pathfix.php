@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Path Fix
-Version: 0.2
+Version: 0.3
 Author: Bryan Shelton
 Author URI: https://github.com/bshelton229
 */
