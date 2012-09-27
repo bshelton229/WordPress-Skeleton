@@ -11,7 +11,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 set :user, "deploy"
 set :use_sudo, FALSE
-set :shared_children, %w{config content content}
+set :shared_children, %w{config content}
 set :keep_releases, 3
 default_run_options[:pty] = true
 set :copy_exclude, %w(.git* /Capfile /config /wp/wp-content Readme.md /local-config-sample.php)
