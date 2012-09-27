@@ -81,6 +81,12 @@ class PathFix {
       $hosts = preg_replace('#https?://#', '', PATHFIX);
       $hosts = preg_replace('#[/\s]#', '', $hosts);
       $hosts = explode(',', $hosts);
+      foreach ( $hosts as $k => $host ) {
+        if ( $host == $_SERVER['HTTP_HOST'] ) {
+          unset( $hosts[$k] );
+        }
+      }
+      $hosts = array_values($hosts);
       // Return the array mapped through an anonymous function that preg_quotes each host
       return array_map(create_function('$s', 'return preg_quote($s, \'#\');'), $hosts);
     }
