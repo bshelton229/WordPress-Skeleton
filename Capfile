@@ -40,7 +40,7 @@ namespace :deploy do
   desc "[disabled] - Restart is disabled"
   task :restart do ; end
 
-  desc "[disabled] - Finalize is disabled (Look at after deploy callbacks)"
+  desc "Finalize the update. Symlink in local-config.php and the content/uploads folder."
   task :finalize_update do
     run "ln -nfs #{shared_path}/config/local-config.php #{latest_release}/config/local-config.php"
     run "ln -nfs #{shared_path}/content/uploads #{latest_release}/content/uploads"
