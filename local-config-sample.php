@@ -18,6 +18,11 @@ define( 'DB_HOST', 'localhost' );
 // and re-written to $_SERVER['HTTP_HOST']. Also addresses wp-content => content replacement.
 // define( 'PATHFIX', 'site.local, mysite.local' );
 
+// Maintenance mode using the maintenance mu-plugin
+// define( 'MAINTENANCE', false);
+// define( 'MAINTENANCE', true);
+// define( 'MAINTENANCE', '<h1>Custom message</h1><p>For maintenance mode</p>');
+
 // $table_prefix = 'wp_';
 
 // If the keys are defined here, they will not be loaded in wp-config.php
