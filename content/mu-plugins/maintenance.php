@@ -18,7 +18,7 @@ class MaintenanceMode {
   }
 
   private function message() {
-    $message = ( MAINTENANCE === true ) ? "<h1>Down for maintenance</h1><p>This site is remporarily down for maintenance</p>" : MAINTENANCE;
+    $message = ( MAINTENANCE === true ) ? "<h1>Down for maintenance</h1><p>This site is temporarily down for maintenance</p>" : MAINTENANCE;
     return apply_filters('maintenance_mode_message', $message);
   }
 }
