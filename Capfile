@@ -42,7 +42,7 @@ namespace :deploy do
 
   desc "Finalize the update. Symlink in local-config.php and the content/uploads folder."
   task :finalize_update do
-    run "ln -nfs #{shared_path}/config/local-config.php #{latest_release}/config/local-config.php"
+    run "ln -nfs #{shared_path}/config/local-config.php #{latest_release}/local-config.php"
     run "ln -nfs #{shared_path}/content/uploads #{latest_release}/content/uploads"
   end
 end
