@@ -9,9 +9,9 @@ You may include other settings here that you only want enabled on your local dev
 // Must have a trailing and leading slash
 // define('WP_SUBURI', '/mysite/');
 
-define( 'DB_NAME', 'local-db-name' );
-define( 'DB_USER', 'local-db-user' );
-define( 'DB_PASSWORD', 'local-db-password' );
+define( 'DB_NAME', 'local_db_name' );
+define( 'DB_USER', 'local_db_user' );
+define( 'DB_PASSWORD', 'local_db_password' );
 define( 'DB_HOST', 'localhost' );
 
 // Comma separated list of hostnames which should be considered "local"
