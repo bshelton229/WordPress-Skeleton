@@ -33,6 +33,17 @@ before "deploy", "git:submodule_tags"
 # Clean up after ourselves automatically
 after "deploy", "deploy:cleanup"
 
+# Dealing with file uploads
+namespace :uploads do
+  task :get do
+    if server = find_servers(:role => :app).first
+      local_uploads = File.expand_path('../content/uploads', __FILE__)
+      Dir.mkdir(local_uploads) if not File.exist?(local_uploads)
+      run_locally "rsync -avz #{user}@#{server}:#{shared_path}/content/uploads/ #{local_uploads}/"
+    end
+  end
+end
+
 # Override / Disable some default Capistrano deploy tasks
 namespace :deploy do
 
