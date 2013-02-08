@@ -19,6 +19,17 @@ set :copy_exclude, %w(.git* /Capfile /config /wp/wp-content Readme.md /local-con
 set :deploy_to, "/www/apache/html/#{application}"
 server "server.example.com", :web, :app
 
+
+# Task to update submodule tags
+namespace :git do
+  desc "Updates git submodule tags"
+  task :submodule_tags do
+      run "if [ -d #{shared_path}/cached-copy/ ]; then cd #{shared_path}/cached-copy/ && git submodule foreach --recursive git fetch origin --tags; fi"
+  end
+end
+# Fetch new submodule tags before deploy
+before "deploy", "git:submodule_tags"
+
 # Clean up after ourselves automatically
 after "deploy", "deploy:cleanup"
 
