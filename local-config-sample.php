@@ -18,6 +18,9 @@ define( 'DB_HOST', 'localhost' );
 // and re-written to $_SERVER['HTTP_HOST']. Also addresses wp-content => content replacement.
 // define( 'PATHFIX', 'site.local, mysite.local' );
 
+// WP_ENV sets the environment to be used by the wp-env MU plugin
+// defined( 'WP_ENV', 'development' );
+
 // Maintenance mode using the maintenance mu-plugin
 // define( 'MAINTENANCE', false);
 // define( 'MAINTENANCE', true);
