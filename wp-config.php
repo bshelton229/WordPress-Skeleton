@@ -7,6 +7,11 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 }
 
 // ========================
+// Security
+// ========================
+define('DISALLOW_FILE_EDIT', TRUE);
+
+// ========================
 // Custom Content Directory
 // ========================
 define('WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
